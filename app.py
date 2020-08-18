@@ -4,6 +4,7 @@ import streamlit as st
 import datetime
 import matplotlib.pyplot as plt
 import gc
+import time
 
 import functions
 
@@ -32,6 +33,7 @@ df_ticker = functions.get_stock_data(ticker_symbol, start_date, end_date)
 stock_prices = functions.prepare_data(df_ticker['Close'])
 fig = functions.make_picture(stock_prices, img=img, x_width_image=x_width_image, horizon_height=horizon_height)
 st.pyplot(fig=fig, bbox_inches='tight')
+time.sleep(0.2)
 plt.close(fig)
 gc.collect()
 

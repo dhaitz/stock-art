@@ -3,6 +3,7 @@
 import streamlit as st
 import datetime
 import matplotlib.pyplot as plt
+import gc
 
 import functions
 
@@ -32,6 +33,7 @@ stock_prices = functions.prepare_data(df_ticker['Close'])
 fig = functions.make_picture(stock_prices, img=img, x_width_image=x_width_image, horizon_height=horizon_height)
 st.pyplot(fig=fig, bbox_inches='tight')
 plt.close(fig)
+gc.collect()
 
 st.markdown("Suggestions [welcome](https://github.com/dhaitz/stock-art). Image source: [mamunurpics](https://www.pexels.com/@mamunurpics). Inspired by [stoxart](https://www.stoxart.com).")
 

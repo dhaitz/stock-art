@@ -27,6 +27,7 @@ end_date = st.sidebar.date_input("End day", datetime.date(2020, 8, 14))
 # Main Window
 
 st.title("Stock Price Chart")
+st.markdown("*2020-08-18: App is receiving heavy traffic, might need several reloads. If pictures do not load, opening them in new browser tabs/windows and repeated refreshing might work. Apologies for the inconvenience*")
 
 # Function calls to get data and make image
 df_ticker = functions.get_stock_data(ticker_symbol, start_date, end_date)
